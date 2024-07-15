@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { LoaderCircle} from "lucide-react"
 import { useState } from "react";
-import { searchUser } from "../_actions/user";
+import { searchUser } from "../../_actions/user";
 
 
 export function UserSearch({onSubmit}: {onSubmit: (username: string) => Promise<void> }) {
@@ -27,7 +27,7 @@ export function UserSearch({onSubmit}: {onSubmit: (username: string) => Promise<
 
     return (
         <div className="flex flex-row justify-between">
-        <Input placeholder="username" onChange={(e) => setInputValue(e.target.value)}/>
+        <Input placeholder="username" onChange={(e) => setInputValue(e.target.value)} className="mr-4"/>
         { submitPending ? (
           <Button className="text-sm md:text-base self-center cursor-not-allowed" size={"lg"} disabled>
           <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
